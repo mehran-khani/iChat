@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		396BF1D02C63A1BE00B35551 /* iChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BF1CF2C63A1BE00B35551 /* iChatApp.swift */; };
+		396BF1D22C63A1BE00B35551 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BF1D12C63A1BE00B35551 /* ContentView.swift */; };
+		396BF1D62C63A1C000B35551 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 396BF1D52C63A1C000B35551 /* Assets.xcassets */; };
+		396BF1D92C63A1C000B35551 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 396BF1D82C63A1C000B35551 /* Preview Assets.xcassets */; };
+		396BF1EB2C63A5D200B35551 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BF1EA2C63A5D200B35551 /* LoginView.swift */; };
+		396BF1ED2C63A6B700B35551 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BF1EC2C63A6B700B35551 /* InputView.swift */; };
+		396BF1EF2C63B18E00B35551 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BF1EE2C63B18E00B35551 /* RegistrationView.swift */; };
+		396BF1F22C63B6FC00B35551 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BF1F12C63B6FC00B35551 /* ProfileView.swift */; };
+		396BF1F42C63B92200B35551 /* SettingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BF1F32C63B92200B35551 /* SettingRowView.swift */; };
+		396BF1F62C63C7AD00B35551 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BF1F52C63C7AD00B35551 /* User.swift */; };
+		396BF1F82C63CEDC00B35551 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 396BF1F72C63CEDC00B35551 /* GoogleService-Info.plist */; };
+		396BF1FC2C63D71E00B35551 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 396BF1FB2C63D71E00B35551 /* FirebaseAnalytics */; };
+		396BF1FE2C63D71E00B35551 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 396BF1FD2C63D71E00B35551 /* FirebaseAuth */; };
+		396BF2002C63D71E00B35551 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 396BF1FF2C63D71E00B35551 /* FirebaseFirestore */; };
+		396BF2022C63D71E00B35551 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 396BF2012C63D71E00B35551 /* FirebaseStorage */; };
+		396BF2062C63D77500B35551 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BF2052C63D77500B35551 /* AuthViewModel.swift */; };
+		396BF2082C63E45000B35551 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 396BF2072C63E45000B35551 /* FirebaseFirestoreCombine-Community */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		396BF1CC2C63A1BE00B35551 /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		396BF1CF2C63A1BE00B35551 /* iChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iChatApp.swift; sourceTree = "<group>"; };
+		396BF1D12C63A1BE00B35551 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		396BF1D52C63A1C000B35551 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		396BF1D82C63A1C000B35551 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		396BF1EA2C63A5D200B35551 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		396BF1EC2C63A6B700B35551 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		396BF1EE2C63B18E00B35551 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		396BF1F12C63B6FC00B35551 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		396BF1F32C63B92200B35551 /* SettingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRowView.swift; sourceTree = "<group>"; };
+		396BF1F52C63C7AD00B35551 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		396BF1F72C63CEDC00B35551 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		396BF1F92C63D3CB00B35551 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		396BF2052C63D77500B35551 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		396BF1C92C63A1BE00B35551 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				396BF1FC2C63D71E00B35551 /* FirebaseAnalytics in Frameworks */,
+				396BF2022C63D71E00B35551 /* FirebaseStorage in Frameworks */,
+				396BF1FE2C63D71E00B35551 /* FirebaseAuth in Frameworks */,
+				396BF2082C63E45000B35551 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				396BF2002C63D71E00B35551 /* FirebaseFirestore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		396BF1C32C63A1BE00B35551 = {
+			isa = PBXGroup;
+			children = (
+				396BF1CE2C63A1BE00B35551 /* iChat */,
+				396BF1CD2C63A1BE00B35551 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		396BF1CD2C63A1BE00B35551 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				396BF1CC2C63A1BE00B35551 /* iChat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		396BF1CE2C63A1BE00B35551 /* iChat */ = {
+			isa = PBXGroup;
+			children = (
+				396BF1F72C63CEDC00B35551 /* GoogleService-Info.plist */,
+				396BF1F92C63D3CB00B35551 /* Config.xcconfig */,
+				396BF1D52C63A1C000B35551 /* Assets.xcassets */,
+				396BF1E62C63A2DC00B35551 /* App */,
+				396BF1E52C63A2DB00B35551 /* Components */,
+				396BF1E42C63A2DA00B35551 /* Core */,
+				396BF1E32C63A2D700B35551 /* Model */,
+				396BF1D72C63A1C000B35551 /* Preview Content */,
+			);
+			path = iChat;
+			sourceTree = "<group>";
+		};
+		396BF1D72C63A1C000B35551 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				396BF1D82C63A1C000B35551 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		396BF1E32C63A2D700B35551 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				396BF1F52C63C7AD00B35551 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		396BF1E42C63A2DA00B35551 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				396BF1E92C63A55E00B35551 /* Authentication */,
+				396BF1E82C63A55D00B35551 /* Home */,
+				396BF1F02C63B6E500B35551 /* Profile */,
+				396BF1E72C63A35D00B35551 /* Root */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		396BF1E52C63A2DB00B35551 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				396BF1EC2C63A6B700B35551 /* InputView.swift */,
+				396BF1F32C63B92200B35551 /* SettingRowView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		396BF1E62C63A2DC00B35551 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				396BF1CF2C63A1BE00B35551 /* iChatApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		396BF1E72C63A35D00B35551 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				396BF1D12C63A1BE00B35551 /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		396BF1E82C63A55D00B35551 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		396BF1E92C63A55E00B35551 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				396BF2032C63D74200B35551 /* Views */,
+				396BF2042C63D74900B35551 /* ViewModels */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		396BF1F02C63B6E500B35551 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				396BF1F12C63B6FC00B35551 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		396BF2032C63D74200B35551 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				396BF1EA2C63A5D200B35551 /* LoginView.swift */,
+				396BF1EE2C63B18E00B35551 /* RegistrationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		396BF2042C63D74900B35551 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				396BF2052C63D77500B35551 /* AuthViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		396BF1CB2C63A1BE00B35551 /* iChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 396BF1DC2C63A1C000B35551 /* Build configuration list for PBXNativeTarget "iChat" */;
+			buildPhases = (
+				396BF1C82C63A1BE00B35551 /* Sources */,
+				396BF1C92C63A1BE00B35551 /* Frameworks */,
+				396BF1CA2C63A1BE00B35551 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iChat;
+			packageProductDependencies = (
+				396BF1FB2C63D71E00B35551 /* FirebaseAnalytics */,
+				396BF1FD2C63D71E00B35551 /* FirebaseAuth */,
+				396BF1FF2C63D71E00B35551 /* FirebaseFirestore */,
+				396BF2012C63D71E00B35551 /* FirebaseStorage */,
+				396BF2072C63E45000B35551 /* FirebaseFirestoreCombine-Community */,
+			);
+			productName = iChat;
+			productReference = 396BF1CC2C63A1BE00B35551 /* iChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		396BF1C42C63A1BE00B35551 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					396BF1CB2C63A1BE00B35551 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = 396BF1C72C63A1BE00B35551 /* Build configuration list for PBXProject "iChat" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 396BF1C32C63A1BE00B35551;
+			packageReferences = (
+				396BF1FA2C63D71E00B35551 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = 396BF1CD2C63A1BE00B35551 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				396BF1CB2C63A1BE00B35551 /* iChat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		396BF1CA2C63A1BE00B35551 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				396BF1D92C63A1C000B35551 /* Preview Assets.xcassets in Resources */,
+				396BF1D62C63A1C000B35551 /* Assets.xcassets in Resources */,
+				396BF1F82C63CEDC00B35551 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		396BF1C82C63A1BE00B35551 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				396BF1EB2C63A5D200B35551 /* LoginView.swift in Sources */,
+				396BF1D22C63A1BE00B35551 /* ContentView.swift in Sources */,
+				396BF1F42C63B92200B35551 /* SettingRowView.swift in Sources */,
+				396BF1ED2C63A6B700B35551 /* InputView.swift in Sources */,
+				396BF1F62C63C7AD00B35551 /* User.swift in Sources */,
+				396BF1D02C63A1BE00B35551 /* iChatApp.swift in Sources */,
+				396BF1F22C63B6FC00B35551 /* ProfileView.swift in Sources */,
+				396BF1EF2C63B18E00B35551 /* RegistrationView.swift in Sources */,
+				396BF2062C63D77500B35551 /* AuthViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		396BF1DA2C63A1C000B35551 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 396BF1F92C63D3CB00B35551 /* Config.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		396BF1DB2C63A1C000B35551 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 396BF1F92C63D3CB00B35551 /* Config.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		396BF1DD2C63A1C000B35551 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 396BF1F92C63D3CB00B35551 /* Config.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iChat/Preview Content\"";
+				DEVELOPMENT_TEAM = MQ8H985ALH;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iChat/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MehranKhani.iChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		396BF1DE2C63A1C000B35551 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 396BF1F92C63D3CB00B35551 /* Config.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iChat/Preview Content\"";
+				DEVELOPMENT_TEAM = MQ8H985ALH;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iChat/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MehranKhani.iChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		396BF1C72C63A1BE00B35551 /* Build configuration list for PBXProject "iChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				396BF1DA2C63A1C000B35551 /* Debug */,
+				396BF1DB2C63A1C000B35551 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		396BF1DC2C63A1C000B35551 /* Build configuration list for PBXNativeTarget "iChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				396BF1DD2C63A1C000B35551 /* Debug */,
+				396BF1DE2C63A1C000B35551 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		396BF1FA2C63D71E00B35551 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		396BF1FB2C63D71E00B35551 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 396BF1FA2C63D71E00B35551 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		396BF1FD2C63D71E00B35551 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 396BF1FA2C63D71E00B35551 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		396BF1FF2C63D71E00B35551 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 396BF1FA2C63D71E00B35551 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		396BF2012C63D71E00B35551 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 396BF1FA2C63D71E00B35551 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		396BF2072C63E45000B35551 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 396BF1FA2C63D71E00B35551 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 396BF1C42C63A1BE00B35551 /* Project object */;
+}
