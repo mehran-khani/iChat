@@ -18,8 +18,10 @@ struct iChatApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(authViewModel)
+            NavigationStack {
+                ContentView()
+                    .environmentObject(authViewModel)
+            }
         }
     }
 }

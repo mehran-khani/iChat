@@ -9,6 +9,8 @@
 		<dict/>
 		<dict/>
 	</array>
+	<key>CHATGPTAPI</key>
+	<string>$(CHATGPTAPI)</string>
 	<key>GOOGLE_APP_ID</key>
 	<string>$(GOOGLE_APP_ID)</string>
 </dict>

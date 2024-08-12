@@ -9,12 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
+    let api = ChatGPTAPI()
+    
     var body: some View {
-        Group {
-            if authViewModel.userSession != nil {
-                ProfileView()
-            } else {
-                LoginView()
+        VStack {
+            Group {
+                if authViewModel.userSession != nil {
+                    HomeView()
+                } else {
+                    LoginView()
+                }
+                
             }
         }
     }
