@@ -9,17 +9,21 @@ import Foundation
 
 class ChatGPTAPI {
     
+    private let systemMessage: Message
+    private let temperature: Double
+    private let model: String
     private let apiKey: String
-    private var chatHistory = [String]()
-    private var chatHistoryText: String {
-        chatHistory.joined()
-    }
+    private var chatHistory = [Message]()
+
     private let urlSession = URLSession.shared
-    private let jsonDecoder = JSONDecoder()
-    private let basePrompt = "You are ChatGPT, a large language model trained by OpenAI. You answer as consisely as possible for each response (e.g. Don't be verbose). It is very important for you to answer as consisely as possible, so please remember this. If you are generating a list, do not have too many items.\n\n\n"
+    private let jsonDecoder: JSONDecoder = {
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        return jsonDecoder
+    }()
     
     private var urlRequest: URLRequest {
-        let url = URL(string: "https://api.openai.com/v1/completions")!
+        let url = URL(string: "https://api.openai.com/v1/chat/completions")!
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         headers.forEach {
@@ -28,6 +32,12 @@ class ChatGPTAPI {
         return urlRequest
     }
     
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY-MM-DD"
+        return formatter
+    }()
+    
     private var headers: [String: String] {
         [
             "Content-Type": "application/json",
@@ -35,32 +45,35 @@ class ChatGPTAPI {
         ]
     }
     
-    init() {
-        self.apiKey = Bundle.main.infoDictionary?["CHATGPTAPI"]  as? String ?? "CHATGPT API KEY was not found"
+    init(model: String = "gpt-3.5-turbo", systemPrompt: String = "You are a helpful assistant", temperature: Double = 0.5) {
+        self.apiKey = Bundle.main.infoDictionary?["CHATGPTAPI"] as! String
+        self.model = model
+        self.systemMessage = .init(role: "system", content: systemPrompt)
+        self.temperature = temperature
     }
     
-    private func generateChatPrompt(from text: String) -> String {
-        var prompt = basePrompt + chatHistoryText + "User: \(text)\n\n\nChatGPT:"
-        if prompt.count > (4000 * 4) {
+    private func generateMessages(from text: String) -> [Message] {
+        var message = [systemMessage] + chatHistory + [Message(role: "user", content: text)]
+        if message.count > (4000 * 4) {
             _ = chatHistory.removeFirst()
-            prompt = generateChatPrompt(from: text)
+            message = generateMessages(from: text)
         }
-        return prompt
+        return message
     }
     
     private func jsonBody(text: String, stream: Bool = true) throws -> Data {
-        let jsonBody: [String: Any] = [
-            "model": "text-chat-davinci-002-20230126",
-            "temperature": 0.5,
-            "max_tokens": 1024,
-            "prompt": generateChatPrompt(from: text),
-            "stop": [
-                "\n\n\n",
-                "<|im_end|>"
-            ],
-            "stream": stream
-        ]
-        return try JSONSerialization.data(withJSONObject: jsonBody)
+        let request = Request(
+            model: model,
+            temperature: temperature,
+            messages: generateMessages(from: text),
+            stream: stream)
+        
+        return try JSONEncoder().encode(request)
+    }
+    
+    private func appendToChatHistory(userText: String, responseText: String) {
+        self.chatHistory.append(.init(role: "user", content: userText))
+        self.chatHistory.append(.init(role: "assistant", content: responseText))
     }
     
     // Streamed data as the response (we will be using this)
@@ -72,23 +85,32 @@ class ChatGPTAPI {
         
         guard let httpResponse = response as? HTTPURLResponse else { throw "Invalid response" }
         guard 200...299 ~= httpResponse.statusCode else {
-            throw "Bad Response: \(httpResponse.statusCode)"
+            var error = ""
+            for try await line in result.lines {
+                error += line
+            }
+            if let errorData = error.data(using: .utf8),
+               let errorRespone = try? jsonDecoder.decode(ErrorRootResponse.self, from: errorData).error {
+                error = "\n\(errorRespone.message)"
+            }
+            throw "Bad Response: \(httpResponse.statusCode), \(error)"
         }
         
         return AsyncThrowingStream<String, Error> { continuation in
-            Task(priority: .userInitiated) {
+            Task(priority: .userInitiated) { [weak self] in
+                guard let self else { return }
                 do {
-                    var streamText = ""
+                    var responseText = ""
                     for try await line in result.lines {
                         if line.hasPrefix("data: "),
                            let data = line.dropFirst(6).data(using: .utf8),
-                           let response = try? self.jsonDecoder.decode(ChatResponse.self, from: data),
-                           let text = response.choices.first?.text {
-                            streamText += text
+                           let response = try? self.jsonDecoder.decode(StreamCompletionResponse.self, from: data),
+                           let text = response.choices.first?.delta.content {
+                            responseText += text
                             continuation.yield(text)
                         }
                     }
-                    self.chatHistory.append(streamText)
+                    self.appendToChatHistory(userText: text, responseText: responseText)
                     continuation.finish()
                 } catch {
                     continuation.finish(throwing: error)
@@ -109,17 +131,25 @@ class ChatGPTAPI {
         }
         
         guard 200...299 ~= httpResponse.statusCode else {
-            throw "Bad Response \(httpResponse.statusCode)"
+            var error = "Bad Response: \(httpResponse.statusCode)"
+            if let errorRootResponse = try? jsonDecoder.decode(ErrorRootResponse.self, from: result).error {
+                error.append("\n\(errorRootResponse.message)")
+            }
+            throw error
         }
         
         do {
-            let chatResponse = try self.jsonDecoder.decode(ChatResponse.self, from: result)
-            let responseText = chatResponse.choices.first?.text ?? ""
-            self.chatHistory.append(responseText)
+            let completionResonse = try self.jsonDecoder.decode(CompletionResponse.self, from: result)
+            let responseText = completionResonse.choices.first?.message.content ?? ""
+            self.appendToChatHistory(userText: text, responseText: responseText)
             return responseText
         } catch {
             throw error
         }
+    }
+    
+    func deleteChatHistory() {
+        self.chatHistory.removeAll()
     }
 }
 

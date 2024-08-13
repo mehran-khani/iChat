@@ -5,6 +5,7 @@
 //  Created by Mehran Khani on 11.08.2024.
 //
 import Foundation
+import SwiftUI
 
 @MainActor
 class HomeViewModel: ObservableObject {
@@ -23,6 +24,14 @@ class HomeViewModel: ObservableObject {
         let text = inputMessage
         inputMessage = ""
         await send(text: text)
+    }
+    
+    @MainActor
+    func clearMessages() {
+        self.api.deleteChatHistory()
+        withAnimation { [weak self] in
+            self?.messages = []
+        }
     }
     
     @MainActor

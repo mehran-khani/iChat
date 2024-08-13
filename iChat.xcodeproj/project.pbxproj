@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3926EBE82C69059900C68A49 /* ChatGPTAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3926EBE72C69059900C68A49 /* ChatGPTAPI.swift */; };
-		3926EBEA2C69238C00C68A49 /* ChatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3926EBE92C69238C00C68A49 /* ChatResponse.swift */; };
 		3926EBED2C693A4400C68A49 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3926EBEC2C693A4400C68A49 /* HomeViewModel.swift */; };
 		3926EBEF2C693AE400C68A49 /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3926EBEE2C693AE400C68A49 /* MessageRow.swift */; };
 		3926EBF12C69480600C68A49 /* LoadingDots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3926EBF02C69480600C68A49 /* LoadingDots.swift */; };
@@ -31,11 +30,11 @@
 		396BF2022C63D71E00B35551 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 396BF2012C63D71E00B35551 /* FirebaseStorage */; };
 		396BF2062C63D77500B35551 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BF2052C63D77500B35551 /* AuthViewModel.swift */; };
 		396BF2082C63E45000B35551 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 396BF2072C63E45000B35551 /* FirebaseFirestoreCombine-Community */; };
+		398D619A2C6AC41A00138B60 /* ChatGPTAPIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398D61992C6AC41A00138B60 /* ChatGPTAPIModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3926EBE72C69059900C68A49 /* ChatGPTAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTAPI.swift; sourceTree = "<group>"; };
-		3926EBE92C69238C00C68A49 /* ChatResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatResponse.swift; sourceTree = "<group>"; };
 		3926EBEC2C693A4400C68A49 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		3926EBEE2C693AE400C68A49 /* MessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRow.swift; sourceTree = "<group>"; };
 		3926EBF02C69480600C68A49 /* LoadingDots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDots.swift; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		396BF1F72C63CEDC00B35551 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		396BF1F92C63D3CB00B35551 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		396BF2052C63D77500B35551 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		398D61992C6AC41A00138B60 /* ChatGPTAPIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTAPIModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +132,8 @@
 		396BF1E32C63A2D700B35551 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				398D61982C6AC3FC00138B60 /* APIModels */,
 				396BF1F52C63C7AD00B35551 /* User.swift */,
-				3926EBE92C69238C00C68A49 /* ChatResponse.swift */,
 				3926EBEE2C693AE400C68A49 /* MessageRow.swift */,
 			);
 			path = Models;
@@ -220,6 +220,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		398D61982C6AC3FC00138B60 /* APIModels */ = {
+			isa = PBXGroup;
+			children = (
+				398D61992C6AC41A00138B60 /* ChatGPTAPIModels.swift */,
+			);
+			path = APIModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,7 +312,7 @@
 				396BF1EB2C63A5D200B35551 /* LoginView.swift in Sources */,
 				396BF1D22C63A1BE00B35551 /* ContentView.swift in Sources */,
 				396BF1F42C63B92200B35551 /* SettingRowView.swift in Sources */,
-				3926EBEA2C69238C00C68A49 /* ChatResponse.swift in Sources */,
+				398D619A2C6AC41A00138B60 /* ChatGPTAPIModels.swift in Sources */,
 				396BF1ED2C63A6B700B35551 /* InputView.swift in Sources */,
 				3926EBE82C69059900C68A49 /* ChatGPTAPI.swift in Sources */,
 				3926EBF32C694D5300C68A49 /* MessageRowView.swift in Sources */,
